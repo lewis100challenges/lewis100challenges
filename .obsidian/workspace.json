@@ -4,31 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "966d7a3ee6b12687",
+        "id": "dc3a986bfd4ca56b",
         "type": "tabs",
         "children": [
           {
-            "id": "e24fd81e2a32e42a",
+            "id": "2f119b6fac46a6d3",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "preview",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新分頁"
-            }
-          },
-          {
-            "id": "83b3ca07e48448a6",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "新分頁"
+              "title": "README"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -187,7 +180,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 287.5
+    "width": 287.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -207,8 +201,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "83b3ca07e48448a6",
+  "active": "2b9beb72094d6f8b",
   "lastOpenFiles": [
+    "Kubernetes",
     "README.md",
     "content/post/kubernetes/kubernetes-use-kubespray-deploy-calico-bgp-backend-process-bird-is-not-running/index.md",
     "content/post/kubernetes/kubernetes-rook-ceph/index.md",
@@ -254,7 +249,6 @@
     "content/post/youtube-shorts/atomic-habits/index.md",
     "content/post/youtube/the-10-most-critical-challenges-of-2024-for-mars-living-how-can-humans-survive-on-mars/index.md",
     "content/post/youtube/the-top-20-atomic-habits-that-can-change-your-life-the-first-one-rejuvenates-you/index.md",
-    "content/post/youtube/openai-s-gpt-store-is-now-open-discover-the-top-10-most-practical-gpt-life-assistants-to-make-your-daily-life-smarter/index.md",
     "Excalidraw/未命名.canvas",
     "1. Self-Learning/DOCKER_K8S/cks和ckad考试/2 CKS 1.25 全套资料/CKS v1.25 考试资料/考題自己整理/考题自己整理_20221231_canvas.canvas",
     "未命名.canvas",
