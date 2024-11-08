@@ -14,6 +14,9 @@ Please make sure you have the correct access rights
 
 #### 發現問題點：
 
+官方連結：
+https://docs.github.com/en/authentication/troubleshooting-ssh/error-key-already-in-use#finding-where-the-key-has-been-used
+
 key綁定到Github top-ow-dt這個帳號上
 
 ```bash
