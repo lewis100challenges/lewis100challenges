@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "100集K8S基礎到大師/EP002 Kubernetes高可用集群安裝  自動安裝(Kubeadm v1.26.3)  Ansible  100集K8S基礎到大師/EP002 Kubernetes高可用集群安裝  自動安裝(Kubeadm v1.26.3)  Ansible  100集K8S基礎到大師.md",
+                "file": "100集K8S基礎到大師/EP001 Kubernetes高可用集群安裝  手動安裝(Kubeadm v1.26.3)  100集K8S基礎到大師/EP001 Kubernetes高可用集群安裝  手動安裝(Kubeadm v1.26.3)  100集K8S基礎到大師.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "EP002 Kubernetes高可用集群安裝  自動安裝(Kubeadm v1.26.3)  Ansible  100集K8S基礎到大師"
+              "title": "EP001 Kubernetes高可用集群安裝  手動安裝(Kubeadm v1.26.3)  100集K8S基礎到大師"
             }
           }
         ]
@@ -161,10 +161,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "100集K8S基礎到大師/EP002 Kubernetes高可用集群安裝  自動安裝(Kubeadm v1.26.3)  Ansible  100集K8S基礎到大師/EP002 Kubernetes高可用集群安裝  自動安裝(Kubeadm v1.26.3)  Ansible  100集K8S基礎到大師.md"
+                "file": "100集K8S基礎到大師/EP001 Kubernetes高可用集群安裝  手動安裝(Kubeadm v1.26.3)  100集K8S基礎到大師/EP001 Kubernetes高可用集群安裝  手動安裝(Kubeadm v1.26.3)  100集K8S基礎到大師.md"
               },
               "icon": "lucide-list",
-              "title": "EP002 Kubernetes高可用集群安裝  自動安裝(Kubeadm v1.26.3)  Ansible  100集K8S基礎到大師 的大綱"
+              "title": "EP001 Kubernetes高可用集群安裝  手動安裝(Kubeadm v1.26.3)  100集K8S基礎到大師 的大綱"
             }
           },
           {
@@ -202,8 +202,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "2b9beb72094d6f8b",
+  "active": "2f119b6fac46a6d3",
   "lastOpenFiles": [
+    "100集K8S基礎到大師/EP001 Kubernetes高可用集群安裝  手動安裝(Kubeadm v1.26.3)  100集K8S基礎到大師/media/4.jpg",
+    "100集K8S基礎到大師/EP001 Kubernetes高可用集群安裝  手動安裝(Kubeadm v1.26.3)  100集K8S基礎到大師/media/3.jpg",
+    "100集K8S基礎到大師/EP001 Kubernetes高可用集群安裝  手動安裝(Kubeadm v1.26.3)  100集K8S基礎到大師/media/2.jpg",
+    "100集K8S基礎到大師/EP001 Kubernetes高可用集群安裝  手動安裝(Kubeadm v1.26.3)  100集K8S基礎到大師/media/1.jpg",
+    "100集K8S基礎到大師/EP001 Kubernetes高可用集群安裝  手動安裝(Kubeadm v1.26.3)  100集K8S基礎到大師/media",
     "README.md",
     "100集K8S基礎到大師/EP002 Kubernetes高可用集群安裝  自動安裝(Kubeadm v1.26.3)  Ansible  100集K8S基礎到大師/EP002 Kubernetes高可用集群安裝  自動安裝(Kubeadm v1.26.3)  Ansible  100集K8S基礎到大師.md",
     "100種技術分享/EP002 Mac ssh key Github ERROR Permission to denied to  100種技術分享  Lewis的100挑戰/EP002 Mac ssh key Github ERROR Permission to denied to  100種技術分享  Lewis的100挑戰.md",
@@ -220,7 +225,6 @@
     "100種技術分享/media/Pasted image 20241108133225.png",
     "100種技術分享/EP002 Mac ssh key Github ERROR Permission to denied to  100種技術分享  Lewis的100挑戰/media/Pasted image 20241108133243.png",
     "100種技術分享/EP002 Mac ssh key Github ERROR Permission to denied to  100種技術分享  Lewis的100挑戰/media/Pasted image 20241108132832.png",
-    "100種技術分享/EP002 Mac ssh key Github ERROR Permission to denied to  100種技術分享  Lewis的100挑戰/media/Pasted image 20241108132533.png",
     "100種技術分享/EP002 Mac ssh key Github ERROR Permission to denied to  100種技術分享  Lewis的100挑戰/media",
     "100種技術分享",
     "Kubernetes/123.md.md",
@@ -238,10 +242,7 @@
     "content/post/devops/devops-jenkins-gitlab-ansible-redis/index.md",
     "content/post/kubernetes/install-gitlab-runner-in-kubernetes/index.md",
     "content/post/kubernetes/kubenetes-nodelocaldns-nslookup-custom-domain-error/index.md",
-    "content/post/kubernetes/install-gitlab-runner-in-kubernetes/media/Pasted-image-20240331175259.png",
-    "content/post/kubernetes/install-gitlab-runner-in-kubernetes/media/Pasted-image-20240331204028.png",
     "content/post/kubernetes/install-gitlab-runner-in-kubernetes/media",
-    "content/post/devops/install-gitlab-runner-in-linux-baremetal/media",
     "content/post/kubernetes/ansible-deploy-kubernetes-cluster-use-kubespray-haproxy-keepalived/index.md",
     "content/post/kubernetes/kubernetes-rook-ceph-cephfs-open-to-the-outside/index.md",
     "content/post/kubernetes/kubernetes-rancher-install-prometheus/index.md",
@@ -249,7 +250,6 @@
     "content/post/kubernetes/kubeadm-install-ubuntu-1-26-3/index.md",
     "content/post/youtube/the-world-s-most-mysterious-ai-hallucination-ranked-first-has-even-left-scientists-baffled/index.md",
     "content/post/life/read/readmoo/readmoo-book001/atomic-habits-day011-summary01/index.md",
-    "content/post/youtube/the-top-10-most-intriguing-musk-secrets-and-you-definitely-won-t-believe-the-first-one/index.md",
     "Excalidraw/未命名.canvas",
     "1. Self-Learning/DOCKER_K8S/cks和ckad考试/2 CKS 1.25 全套资料/CKS v1.25 考试资料/考題自己整理/考题自己整理_20221231_canvas.canvas",
     "未命名.canvas",
