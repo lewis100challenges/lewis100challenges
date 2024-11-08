@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "100集K8S基礎到大師/EP001 Kubernetes高可用集群安裝  手動安裝(Kubeadm v1.26.3)  100集K8S基礎到大師/EP001 Kubernetes高可用集群安裝  手動安裝(Kubeadm v1.26.3)  100集K8S基礎到大師.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "EP001 Kubernetes高可用集群安裝  手動安裝(Kubeadm v1.26.3)  100集K8S基礎到大師"
+              "title": "README"
             }
           }
         ]
@@ -161,10 +161,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "100集K8S基礎到大師/EP001 Kubernetes高可用集群安裝  手動安裝(Kubeadm v1.26.3)  100集K8S基礎到大師/EP001 Kubernetes高可用集群安裝  手動安裝(Kubeadm v1.26.3)  100集K8S基礎到大師.md"
+                "file": "README.md"
               },
               "icon": "lucide-list",
-              "title": "EP001 Kubernetes高可用集群安裝  手動安裝(Kubeadm v1.26.3)  100集K8S基礎到大師 的大綱"
+              "title": "README 的大綱"
             }
           },
           {
@@ -204,6 +204,7 @@
   },
   "active": "2f119b6fac46a6d3",
   "lastOpenFiles": [
+    "100集K8S基礎到大師/EP001 Kubernetes高可用集群安裝  手動安裝(Kubeadm v1.26.3)  100集K8S基礎到大師/EP001 Kubernetes高可用集群安裝  手動安裝(Kubeadm v1.26.3)  100集K8S基礎到大師.md",
     "100集K8S基礎到大師/EP001 Kubernetes高可用集群安裝  手動安裝(Kubeadm v1.26.3)  100集K8S基礎到大師/media/4.jpg",
     "100集K8S基礎到大師/EP001 Kubernetes高可用集群安裝  手動安裝(Kubeadm v1.26.3)  100集K8S基礎到大師/media/3.jpg",
     "100集K8S基礎到大師/EP001 Kubernetes高可用集群安裝  手動安裝(Kubeadm v1.26.3)  100集K8S基礎到大師/media/2.jpg",
@@ -214,7 +215,6 @@
     "100種技術分享/EP002 Mac ssh key Github ERROR Permission to denied to  100種技術分享  Lewis的100挑戰/EP002 Mac ssh key Github ERROR Permission to denied to  100種技術分享  Lewis的100挑戰.md",
     "100集K8S基礎到大師/EP002 Kubernetes高可用集群安裝  自動安裝(Kubeadm v1.26.3)  Ansible  100集K8S基礎到大師",
     "100種技術分享/EP002 Mac ssh key Github ERROR Permission to denied to  100種技術分享  Lewis的100挑戰",
-    "100集K8S基礎到大師/EP001 Kubernetes高可用集群安裝  手動安裝(Kubeadm v1.26.3)  100集K8S基礎到大師/EP001 Kubernetes高可用集群安裝  手動安裝(Kubeadm v1.26.3)  100集K8S基礎到大師.md",
     "100本書",
     "media/Pasted image 20241108195729.png",
     "media",
@@ -224,7 +224,6 @@
     "100種技術分享/EP002 Mac ssh key Github ERROR Permission to denied to  100種技術分享  Lewis的100挑戰/media/Pasted image 20241108133313.png",
     "100種技術分享/media/Pasted image 20241108133225.png",
     "100種技術分享/EP002 Mac ssh key Github ERROR Permission to denied to  100種技術分享  Lewis的100挑戰/media/Pasted image 20241108133243.png",
-    "100種技術分享/EP002 Mac ssh key Github ERROR Permission to denied to  100種技術分享  Lewis的100挑戰/media/Pasted image 20241108132832.png",
     "100種技術分享/EP002 Mac ssh key Github ERROR Permission to denied to  100種技術分享  Lewis的100挑戰/media",
     "100種技術分享",
     "Kubernetes/123.md.md",
