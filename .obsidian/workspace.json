@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Kubernetes/123.md",
+                "file": "100種技術分享/EP002 Mac ssh key Github ERROR Permission to denied to  100種技術分享  Lewis的100挑戰.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "123"
+              "title": "EP002 Mac ssh key Github ERROR Permission to denied to  100種技術分享  Lewis的100挑戰"
             }
           }
         ]
@@ -160,9 +160,11 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {},
+              "state": {
+                "file": "100種技術分享/EP002 Mac ssh key Github ERROR Permission to denied to  100種技術分享  Lewis的100挑戰.md"
+              },
               "icon": "lucide-list",
-              "title": "大綱"
+              "title": "EP002 Mac ssh key Github ERROR Permission to denied to  100種技術分享  Lewis的100挑戰 的大綱"
             }
           },
           {
@@ -176,12 +178,11 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 287.5,
-    "collapsed": true
+    "width": 287.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -201,12 +202,22 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "2f119b6fac46a6d3",
+  "active": "0bfa85e385e30a2b",
   "lastOpenFiles": [
+    "100種技術分享/media/Pasted image 20241108133449.png",
+    "100種技術分享/media/Pasted image 20241108133337.png",
+    "100種技術分享/media/Pasted image 20241108133313.png",
+    "100種技術分享/media/Pasted image 20241108133225.png",
+    "100種技術分享/EP002 Mac ssh key Github ERROR Permission to denied to  100種技術分享  Lewis的100挑戰.md",
+    "100種技術分享/media/Pasted image 20241108133243.png",
+    "100種技術分享/media/Pasted image 20241108132832.png",
+    "100種技術分享/media/Pasted image 20241108132533.png",
+    "100種技術分享/media",
+    "100集K8S基礎到大師/123.md",
+    "100種技術分享",
     "README.md",
     "Kubernetes/123.md.md",
-    "Kubernetes/123.md",
-    "Kubernetes",
+    "100集K8S基礎到大師",
     "content/post/kubernetes/kubernetes-use-kubespray-deploy-calico-bgp-backend-process-bird-is-not-running/index.md",
     "content/post/kubernetes/kubernetes-rook-ceph/index.md",
     "content/post/kubernetes/kubernetes-rancher-install-prometheus-selector-to-master/index.md",
@@ -224,12 +235,6 @@
     "content/post/kubernetes/install-gitlab-runner-in-kubernetes/media/Pasted-image-20240331204028.png",
     "content/post/kubernetes/install-gitlab-runner-in-kubernetes/media/Pasted-image-20240331203617.png",
     "content/post/kubernetes/install-gitlab-runner-in-kubernetes/media/Pasted-image-20240331203203.png",
-    "content/post/kubernetes/install-gitlab-runner-in-kubernetes/media/Pasted-image-20240331202007.png",
-    "content/post/kubernetes/install-gitlab-runner-in-kubernetes/media/Pasted-image-20240331201748.png",
-    "content/post/kubernetes/install-gitlab-runner-in-kubernetes/media/Pasted-image-20240331201506.png",
-    "content/post/kubernetes/install-gitlab-runner-in-kubernetes/media/Pasted-image-20240331201006.png",
-    "content/post/kubernetes/install-gitlab-runner-in-kubernetes/media/Pasted-image-20240331200900.png",
-    "content/post/kubernetes/install-gitlab-runner-in-kubernetes/media/Pasted-image-20240331200702.png",
     "content/post/kubernetes/install-gitlab-runner-in-kubernetes/media",
     "content/post/devops/install-gitlab-runner-in-linux-baremetal/media",
     "content/post/kubernetes/install-gitlab-runner-in-kubernetes",
@@ -241,14 +246,10 @@
     "content/post/kubernetes/kubernetes-rook-ceph-cephfs-open-to-the-outside",
     "content/post/kubernetes/kubernetes-rancher-install-prometheus-selector-to-master/media",
     "content/post/kubernetes/kubernetes-rancher-install-prometheus-error-debug/index.md",
-    "content/post/kubernetes/kubernetes-rancher-install-prometheus-selector-to-master",
     "content/post/kubernetes/kubeadm-install-ubuntu-1-26-3/index.md",
-    "content/post/kubernetes/kubernetes-use-kubespray-deploy-calico-bgp-backend-process-bird-is-not-running",
     "content/post/youtube/the-world-s-most-mysterious-ai-hallucination-ranked-first-has-even-left-scientists-baffled/index.md",
     "content/post/life/read/readmoo/readmoo-book001/atomic-habits-day011-summary01/index.md",
     "content/post/youtube/the-top-10-most-intriguing-musk-secrets-and-you-definitely-won-t-believe-the-first-one/index.md",
-    "content/post/youtube-shorts/atomic-habits/index.md",
-    "content/post/youtube/the-10-most-critical-challenges-of-2024-for-mars-living-how-can-humans-survive-on-mars/index.md",
     "Excalidraw/未命名.canvas",
     "1. Self-Learning/DOCKER_K8S/cks和ckad考试/2 CKS 1.25 全套资料/CKS v1.25 考试资料/考題自己整理/考题自己整理_20221231_canvas.canvas",
     "未命名.canvas",
