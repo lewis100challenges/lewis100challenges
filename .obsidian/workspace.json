@@ -202,8 +202,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "2f119b6fac46a6d3",
+  "active": "2b9beb72094d6f8b",
   "lastOpenFiles": [
+    "100本書",
     "media/Pasted image 20241108195729.png",
     "media",
     "100種技術分享/EP002 Mac ssh key Github ERROR Permission to denied to  100種技術分享  Lewis的100挑戰.md",
@@ -236,7 +237,6 @@
     "content/post/kubernetes/kubenetes-nodelocaldns-nslookup-custom-domain-error/index.md",
     "content/post/kubernetes/install-gitlab-runner-in-kubernetes/media/Pasted-image-20240331175259.png",
     "content/post/kubernetes/install-gitlab-runner-in-kubernetes/media/Pasted-image-20240331204028.png",
-    "content/post/kubernetes/install-gitlab-runner-in-kubernetes/media/Pasted-image-20240331203617.png",
     "content/post/kubernetes/install-gitlab-runner-in-kubernetes/media",
     "content/post/devops/install-gitlab-runner-in-linux-baremetal/media",
     "content/post/kubernetes/install-gitlab-runner-in-kubernetes",
