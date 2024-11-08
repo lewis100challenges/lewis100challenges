@@ -1,0 +1,19 @@
+{
+  "promptDelete": false,
+  "showUnsupportedFiles": true,
+  "readableLineLength": false,
+  "foldIndent": false,
+  "alwaysUpdateLinks": true,
+  "useMarkdownLinks": true,
+  "newFileLocation": "current",
+  "newLinkFormat": "relative",
+  "attachmentFolderPath": "./media",
+  "defaultViewMode": "preview",
+  "pdfExportSettings": {
+    "includeName": false,
+    "pageSize": "Letter",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  }
+}

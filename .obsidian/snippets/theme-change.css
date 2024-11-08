@@ -1,0 +1,21 @@
+.markdown-preview-view blockquote {
+    border: 1px solid #dfdfdf;
+    border-left: 3px solid #dfdfdf;
+    border-radius: 0;
+    margin-bottom: 25px;
+    margin-inline-start: 10px;
+    margin-top: 25px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+
+/* Markdown Preview Tables */
+.markdown-preview-view table {
+    width: 100%;
+    border: 2px solid #dfdfdf;
+    color: var(--text-normal);
+}
+
+.markdown-preview-view img {
+  border: 1px solid #dfdfdf;
+}
