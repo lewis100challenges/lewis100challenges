@@ -29,12 +29,14 @@ Hi top-ow-dt! You've successfully authenticated, but GitHub does not provide she
 登入Github top-ow-dt這個帳號刪除key，再將公鑰匯入到我的新帳號lewis100challenges
 
 **Github top-ow-dt這個帳號，刪除key公鑰**
+
 ![](media/Pasted%20image%2020241108132533.png)
 
 **Github lewis100challenges這個帳號，添加key公鑰**
 
 ![](media/Pasted%20image%2020241108132832.png)
 
+再一次檢測，確定此公鑰已綁定在lewis100challenges這個帳號
 
 ```bash
 chenqingze@chenqingze-MBP lewis100challenges % ssh -T -ai ~/.ssh/id_ed25519 git@github.com
@@ -43,6 +45,7 @@ Hi lewis100challenges! You've successfully authenticated, but GitHub does not pr
 ```
 
 推送成功
+
 ```bash
 chenqingze@chenqingze-MBP lewis100challenges % git add .
 chenqingze@chenqingze-MBP lewis100challenges % git commit -m "second commit"
@@ -63,16 +66,18 @@ branch 'main' set up to track 'origin/main'.
 
 #### 使用Obsidian撰寫文章，直接推送至GitHub：
 
-
 新增檔案
 
 ![](media/Pasted%20image%2020241108133243.png)
 
 Git Commit all changes
+
 ![](media/Pasted%20image%2020241108133313.png)
 
 Git Push
+
 ![](media/Pasted%20image%2020241108133337.png)
 
 測試成功
+
 ![](media/Pasted%20image%2020241108133449.png)
