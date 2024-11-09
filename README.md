@@ -2,7 +2,7 @@
 
 📬《聯絡資訊》
 
-Email：
+Emai：
 lewis100challenges@gmail.com
 
 Discord：
