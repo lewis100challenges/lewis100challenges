@@ -1,0 +1,263 @@
+# Kubernetes 高可用集群自動化部署
+
+這個專案提供了一個完整的 Ansible playbook，用於自動化部署和配置高可用的 Kubernetes 集群。
+
+## 功能特點
+
+- 支援多 Master 節點的高可用架構
+- 使用 HAProxy 和 Keepalived 實現負載均衡
+- 自動化配置 Docker 和 Kubernetes 環境
+- Calico 網路插件的自動部署
+- 完整的憑證管理和更新機制
+- 集群狀態驗證和健康檢查
+- 詳細的部署報告生成
+
+## 系統要求
+
+### 硬體配置
+- Master 節點：
+  - CPU: 2 核心以上
+  - 記憶體: 4GB 以上
+  - 硬碟: 50GB 以上
+- Worker 節點：
+  - CPU: 2 核心以上
+  - 記憶體: 4GB 以上
+  - 硬碟: 100GB 以上
+
+### 作業系統要求
+- Ubuntu 22.04 LTS
+- 所有節點都必須能夠通過 SSH 連接
+- 所有節點都必須能夠訪問互聯網
+
+### 軟體版本
+- Ansible: 2.9+
+- Python: 3.8+
+- Kubernetes: 1.26.15-1.1
+- Docker: 20.10.13
+- Calico: 3.26.0
+
+## 目錄結構
+```
+# 完整目錄結構
+k8s-cluster-ansible/
+├── site.yml
+├── README.md
+├── inventory/
+│   ├── group_vars/
+│   │   └── all.yml               # 全域變數配置
+│   └── hosts.yml                 # 主機清單配置
+└── roles/
+    ├── common/                   # 基礎系統配置
+    │   ├── tasks/
+    │   │   └── main.yml
+    │   ├── templates/
+    │   │   ├── hosts.j2
+    │   │   ├── k8s.conf.j2
+    │   │   ├── sysctl-k8s.conf.j2
+    │   │   └── ipvs.conf.j2
+    │   └── handlers/
+    │       └── main.yml
+    ├── docker/                   # Docker 安裝配置
+    │   ├── tasks/
+    │   │   └── main.yml
+    │   ├── templates/
+    │   │   └── daemon.json.j2
+    │   └── handlers/
+    │       └── main.yml
+    ├── k8s-base/                # Kubernetes 基礎組件
+    │   ├── tasks/
+    │   │   └── main.yml
+    │   ├── templates/
+    │   │   ├── kubelet.conf.j2
+    │   │   └── k8s-base.conf.j2
+    │   └── handlers/
+    │       └── main.yml
+    ├── haproxy/                 # HAProxy 負載均衡
+    │   ├── tasks/
+    │   │   └── main.yml
+    │   ├── templates/
+    │   │   └── haproxy.cfg.j2
+    │   └── handlers/
+    │       └── main.yml
+    ├── keepalived/              # Keepalived 高可用
+    │   ├── tasks/
+    │   │   └── main.yml
+    │   ├── templates/
+    │   │   ├── keepalived.conf.j2
+    │   │   └── check_apiserver.sh.j2
+    │   └── handlers/
+    │       └── main.yml
+    ├── k8s-master/              # Master 節點配置
+    │   ├── tasks/
+    │   │   └── main.yml
+    │   └── templates/
+    │       └── kubeadm.yaml.j2
+    ├── k8s-node/                # Worker 節點配置
+    │   ├── tasks/
+    │   │   └── main.yml
+    │   └── templates/
+    │       └── k8s-node.conf.j2
+    ├── calico-network/          # Calico 網路配置
+    │   ├── tasks/
+    │   │   └── main.yml
+    │   └── templates/
+    │       └── custom-resources.yaml.j2
+    ├── k8s-completion/          # Kubectl 自動補全
+    │   ├── tasks/
+    │   │   └── main.yml
+    │   └── files/
+    │       └── bash_completion
+    ├── cert-manager/            # 證書管理
+    │   ├── tasks/
+    │   │   └── main.yml
+    │   └── templates/
+    │       └── cert-update.sh.j2
+    └── cluster-validation/      # 集群驗證
+        ├── tasks/
+        │   └── main.yml
+        └── templates/
+            └── test-manifests.yaml.j2
+```
+
+## 快速開始
+
+### 1. 配置清單檔案
+編輯 `inventory/hosts.yml`，設置您的節點資訊：
+```yaml
+all:
+  children:
+    masters:
+      hosts:
+        master1:
+          ansible_host: 192.168.1.71
+        master2:
+          ansible_host: 192.168.1.72
+        master3:
+          ansible_host: 192.168.1.73
+    nodes:
+      hosts:
+        worker1:
+          ansible_host: 192.168.1.75
+        worker2:
+          ansible_host: 192.168.1.76
+```
+
+### 2. 配置變數
+編輯 `inventory/group_vars/all.yml`，根據需求調整配置：
+```yaml
+# Kubernetes 配置
+k8s_version: 1.26.15-1.1
+pod_network_cidr: 10.244.0.0/16
+service_network_cidr: 10.245.0.0/16
+
+# 負載均衡配置
+k8s_lb:
+  vip: 192.168.1.74
+  port: 7443
+
+# 網路配置
+network_interface: ens160
+```
+
+### 3. 安裝依賴
+```bash
+# 安裝必要的 Ansible collections
+ansible-galaxy collection install kubernetes.core
+```
+
+### 4. 執行部署
+```bash
+# 完整部署
+ansible-playbook -i inventory/hosts.yml site.yml
+
+# 只部署特定組件
+ansible-playbook -i inventory/hosts.yml site.yml --tags docker
+ansible-playbook -i inventory/hosts.yml site.yml --tags kubernetes
+```
+
+## 驗證部署
+
+### 1. 檢查節點狀態
+```bash
+kubectl get nodes
+```
+
+### 2. 檢查系統組件
+```bash
+kubectl get pods -n kube-system
+```
+
+### 3. 運行驗證測試
+```bash
+ansible-playbook -i inventory/hosts.yml site.yml --tags validate
+```
+
+## 常見操作
+
+### 更新憑證
+```bash
+ansible-playbook -i inventory/hosts.yml site.yml --tags certificates
+```
+
+### 添加新節點
+1. 在 `inventory/hosts.yml` 中添加新節點
+2. 執行：
+```bash
+ansible-playbook -i inventory/hosts.yml site.yml --tags node
+```
+
+### 維護模式
+將節點設置為維護模式：
+```bash
+kubectl drain <node-name> --ignore-daemonsets
+```
+
+## 故障排除
+
+### 常見問題
+1. 節點無法加入集群
+   - 檢查網路連接
+   - 檢查防火牆配置
+   - 查看 kubelet 日誌
+
+2. 網路問題
+   - 確認 Calico 配置正確
+   - 檢查 Pod 網路範圍是否衝突
+   - 驗證節點間連通性
+
+3. 憑證問題
+   - 使用 cert-manager role 更新憑證
+   - 檢查憑證有效期
+
+### 日誌收集
+收集診斷資訊：
+```bash
+ansible-playbook -i inventory/hosts.yml site.yml --tags collect-logs
+```
+
+## 維護和更新
+
+### 日常維護
+1. 定期檢查集群狀態
+2. 監控節點資源使用
+3. 更新安全補丁
+
+### 版本更新
+更新 Kubernetes 版本：
+1. 修改 `group_vars/all.yml` 中的版本號
+2. 執行更新 playbook
+
+## 貢獻指南
+
+1. Fork 本專案
+2. 創建功能分支
+3. 提交變更
+4. 發起 Pull Request
+
+## 授權
+
+本專案採用 MIT 授權
+
+## 聯絡方式
+
+如有問題，請開啟 Issue 或發送電子郵件至 [您的郵件地址]

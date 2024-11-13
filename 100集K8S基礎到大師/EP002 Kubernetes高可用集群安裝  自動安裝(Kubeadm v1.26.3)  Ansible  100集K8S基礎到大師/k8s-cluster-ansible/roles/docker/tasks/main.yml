@@ -1,0 +1,87 @@
+---
+- name: Create directory for Docker keyring
+  file:
+    path: /etc/apt/keyrings
+    state: directory
+    mode: '0755'
+
+- name: Add Docker GPG apt Key
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+
+- name: Download GPG key to specific location
+  shell: |
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+    chmod a+r /etc/apt/keyrings/docker.gpg
+  args:
+    creates: /etc/apt/keyrings/docker.gpg
+
+- name: Add Docker Repository
+  apt_repository:
+    repo: "deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
+    state: present
+    filename: docker
+    update_cache: yes
+
+- name: Install Docker packages using shell command
+  shell: |
+    apt-get install -y --allow-downgrades \
+      docker-ce={{ docker_version }} \
+      docker-ce-cli={{ docker_version }} \
+      containerd.io \
+      docker-compose-plugin
+  register: docker_install
+  changed_when: "'0 newly installed' not in docker_install.stdout and '0 upgraded' not in docker_install.stdout"
+
+- name: Hold Docker packages
+  dpkg_selections:
+    name: "{{ item }}"
+    selection: hold
+  with_items:
+    - docker-ce
+    - docker-ce-cli
+    - containerd.io
+
+- name: Remove unnecessary packages
+  apt:
+    name: docker-buildx-plugin
+    state: absent
+    autoremove: yes
+  when: ansible_distribution_version is version('22.04', '>=')
+
+- name: Create Docker config directory
+  file:
+    path: /etc/docker
+    state: directory
+    mode: '0755'
+
+- name: Configure Docker daemon
+  template:
+    src: daemon.json.j2
+    dest: /etc/docker/daemon.json
+  notify: Restart docker
+
+- name: Create Docker service directory
+  file:
+    path: /etc/systemd/system/docker.service.d
+    state: directory
+    mode: '0755'
+
+- name: Configure Docker service
+  template:
+    src: docker.service.j2
+    dest: /etc/systemd/system/docker.service.d/docker.conf
+  notify: Restart docker
+
+- name: Start and enable Docker service
+  service:
+    name: docker
+    state: started
+    enabled: yes
+
+- name: Test Docker installation
+  command: docker run hello-world
+  register: test_output
+  changed_when: false
+  failed_when: test_output.rc != 0

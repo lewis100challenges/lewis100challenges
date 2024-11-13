@@ -1,0 +1,44 @@
+---
+- name: Install Keepalived
+  apt:
+    name: keepalived
+    state: present
+    update_cache: yes
+
+- name: Create Keepalived configuration directory
+  file:
+    path: /etc/keepalived
+    state: directory
+    mode: '0755'
+
+- name: Configure Keepalived
+  template:
+    src: keepalived.conf.j2
+    dest: /etc/keepalived/keepalived.conf
+    owner: root
+    group: root
+    mode: '0644'
+  notify: Restart keepalived
+
+- name: Create health check script
+  template:
+    src: check_apiserver.sh.j2
+    dest: /etc/keepalived/check_apiserver.sh
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Create Keepalived default file
+  template:
+    src: keepalived.default.j2
+    dest: /etc/default/keepalived
+    owner: root
+    group: root
+    mode: '0644'
+  notify: Restart keepalived
+
+- name: Enable and start Keepalived service
+  service:
+    name: keepalived
+    state: started
+    enabled: yes

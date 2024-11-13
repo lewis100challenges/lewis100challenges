@@ -1,0 +1,13 @@
+---
+validation_config:
+  wait_timeout: 300
+  retries: 6
+  delay: 10
+  test_namespace: validation-test
+  test_pod_name: test-nginx
+  test_service_name: test-nginx
+  dns_test_pod_name: dns-test
+  test_image: nginx:alpine
+  dns_test_image: busybox:1.28
+  cleanup_test_resources: true
+  report_path: /var/log/kubernetes/validation

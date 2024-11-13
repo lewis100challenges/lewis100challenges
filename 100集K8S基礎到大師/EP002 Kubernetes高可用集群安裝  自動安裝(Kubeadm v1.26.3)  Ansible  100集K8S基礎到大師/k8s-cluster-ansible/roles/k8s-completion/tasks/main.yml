@@ -1,0 +1,55 @@
+---
+- name: Install required packages
+  apt:
+    name:
+      - bash-completion
+      - plocate
+    state: present
+    update_cache: yes
+
+- name: Create completion directory
+  file:
+    path: /etc/bash_completion.d
+    state: directory
+    mode: '0755'
+
+- name: Generate kubectl completion script
+  shell: kubectl completion bash > /etc/bash_completion.d/kubectl
+  args:
+    creates: /etc/bash_completion.d/kubectl
+
+- name: Set kubectl alias and completion in bashrc
+  blockinfile:
+    path: /root/.bashrc
+    block: |
+      alias k='kubectl'
+      source <(kubectl completion bash)
+      complete -o default -F __start_kubectl k
+    marker: "# {mark} KUBECTL COMPLETION BLOCK"
+    create: yes
+
+- name: Create useful kubectl aliases
+  blockinfile:
+    path: /root/.bashrc
+    block: |
+      # Kubectl aliases
+      alias kgp='kubectl get pods'
+      alias kgn='kubectl get nodes'
+      alias kgs='kubectl get services'
+      alias kgd='kubectl get deployments'
+      alias kgh='kubectl get horizontalpodautoscalers'
+      alias kgpv='kubectl get persistentvolumes'
+      alias kgpvc='kubectl get persistentvolumeclaims'
+      alias kgns='kubectl get namespaces'
+      alias kdp='kubectl describe pod'
+      alias kdn='kubectl describe node'
+      alias kds='kubectl describe service'
+      alias kdd='kubectl describe deployment'
+    marker: "# {mark} KUBECTL ALIASES BLOCK"
+    create: yes
+
+- name: Source bash completion
+  shell: source /usr/share/bash-completion/bash_completion
+  args:
+    executable: /bin/bash
+  changed_when: false

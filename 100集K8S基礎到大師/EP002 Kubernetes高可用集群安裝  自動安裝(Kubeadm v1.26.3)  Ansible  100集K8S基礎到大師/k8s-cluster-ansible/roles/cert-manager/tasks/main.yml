@@ -1,0 +1,92 @@
+---
+- name: Check current certificate expiration
+  shell: |
+    for i in $(ls /etc/kubernetes/pki/*.crt); do
+      echo "=== $i ==="
+      openssl x509 -in $i -text -noout | grep -A 3 'Validity'
+    done
+  register: cert_status
+  changed_when: false
+
+- name: Display current certificate status
+  debug:
+    var: cert_status.stdout_lines
+
+- name: Create backup directory for certificates
+  file:
+    path: /etc/kubernetes/pki/backup_{{ ansible_date_time.date }}
+    state: directory
+    mode: '0700'
+
+- name: Backup existing certificates
+  copy:
+    src: /etc/kubernetes/pki/
+    dest: /etc/kubernetes/pki/backup_{{ ansible_date_time.date }}/
+    remote_src: yes
+
+- name: Install required packages for certificate management
+  apt:
+    name:
+      - git
+      - openssl
+    state: present
+    update_cache: yes
+
+- name: Clone update-kube-cert repository
+  git:
+    repo: https://github.com/yuyicai/update-kube-cert.git
+    dest: /etc/kubernetes/pki/update-kube-cert
+    version: master
+    force: yes
+
+- name: Update certificates expiration
+  shell: bash update-kubeadm-cert.sh all
+  args:
+    chdir: /etc/kubernetes/pki/update-kube-cert
+  register: cert_update
+
+- name: Display certificate update results
+  debug:
+    var: cert_update.stdout_lines
+
+- name: Delete affected pods to apply new certificates
+  kubernetes.core.k8s:
+    state: absent
+    namespace: kube-system
+    kind: Pod
+    name: "{{ item }}"
+  with_items:
+    - "kube-apiserver-{{ master1_hostname }}"
+    - "kube-apiserver-{{ master2_hostname }}"
+    - "kube-apiserver-{{ master3_hostname }}"
+    - "kube-controller-manager-{{ master1_hostname }}"
+    - "kube-controller-manager-{{ master2_hostname }}"
+    - "kube-controller-manager-{{ master3_hostname }}"
+    - "kube-scheduler-{{ master1_hostname }}"
+    - "kube-scheduler-{{ master2_hostname }}"
+    - "kube-scheduler-{{ master3_hostname }}"
+
+- name: Wait for pods to restart
+  kubernetes.core.k8s_info:
+    kind: Pod
+    namespace: kube-system
+    label_selectors:
+      - "component in (kube-apiserver,kube-controller-manager,kube-scheduler)"
+    wait: yes
+    wait_timeout: 300
+    wait_condition:
+      type: Ready
+      status: "True"
+
+- name: Verify new certificate expiration
+  shell: |
+    for i in $(ls /etc/kubernetes/pki/*.crt); do
+      echo "=== $i ==="
+      openssl x509 -in $i -text -noout | grep -A 3 'Validity'
+    done
+  register: new_cert_status
+  changed_when: false
+
+- name: Display new certificate status
+  debug:
+    var: new_cert_status.stdout_lines

@@ -1,0 +1,12 @@
+---
+- name: Restart kubelet
+  service:
+    name: kubelet
+    state: restarted
+    daemon_reload: yes
+
+- name: Restart cri-docker
+  service:
+    name: cri-docker
+    state: restarted
+    daemon_reload: yes

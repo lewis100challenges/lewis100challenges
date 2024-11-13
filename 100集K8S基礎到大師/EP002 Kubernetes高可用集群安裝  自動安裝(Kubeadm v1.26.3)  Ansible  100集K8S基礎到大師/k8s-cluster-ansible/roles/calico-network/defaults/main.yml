@@ -1,0 +1,12 @@
+---
+calico_config:
+  manifest_dir: /root/calico
+  registry: docker.io
+  image_path: calico
+  block_size: 26
+  encapsulation: VXLANCrossSubnet
+  nat_outgoing: Enabled
+  node_selector: all()
+  container_ip_forwarding: Disabled
+  enable_wireguard: false
+  mtu: 1440  # Optional: Customize MTU if needed
