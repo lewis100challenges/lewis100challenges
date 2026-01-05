@@ -1,6 +1,4 @@
-![](media/Pasted%20image%2020241108195729.png)
-
-📬《聯絡資訊》
+📬《Contact information》
 
 Emai：
 lewis100challenges@gmail.com
