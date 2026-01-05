@@ -1,6 +1,0 @@
-cert_manager_config:
-  backup_dir: /etc/kubernetes/pki/backup
-  cert_update_repo: https://github.com/yuyicai/update-kube-cert.git
-  cert_update_version: master
-  cert_validity: 10  # years
-  pods_wait_timeout: 300

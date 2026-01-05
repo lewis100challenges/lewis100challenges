@@ -1,5 +1,0 @@
----
-completion_config:
-  enable_aliases: true
-  custom_aliases: {}
-  completion_file: /etc/bash_completion.d/kubectl

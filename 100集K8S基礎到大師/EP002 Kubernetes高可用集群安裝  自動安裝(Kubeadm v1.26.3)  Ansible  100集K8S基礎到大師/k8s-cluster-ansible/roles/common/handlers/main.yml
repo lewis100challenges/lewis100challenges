@@ -1,9 +1,0 @@
----
-- name: Reload systemd modules
-  systemd:
-    name: systemd-modules-load
-    state: restarted
-    daemon_reload: yes
-
-- name: Apply sysctl
-  command: sysctl -p /etc/sysctl.d/k8s.conf
